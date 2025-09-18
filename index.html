@@ -1,64 +1,623 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bhusal Grill Udhyog — Aluminium Grills, Doors & Windows</title>
-  <meta name="description" content="Bhusal Grill Udhyog designs and builds aluminium grills, doors, and windows in Nepal.">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="hero">
-    <h1>Bhusal Grill Udhyog</h1>
-    <p>We design, fabricate, and install premium aluminium grills, doors, and windows. Strong, rust-free, and built to last.</p>
-    <a href="#portfolio" class="btn">View Portfolio</a>
-    <a href="#contact" class="btn">Contact Us</a>
-  </header>
-
-  <section id="portfolio" class="section">
-    <h2>Our Portfolio</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://th.bing.com/th/id/R.d7449181eb82d91a0e16f0a49a0f5f84?rik=8Oz%2buN8O%2bLVQEA&pid=ImgRaw&r=0" alt="Aluminium Window Grills"  >
-        <h3>Aluminium Window Grills</h3>
-        <p>Durable and stylish window grills to secure and beautify your home.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bhusal Grill Udhyog</title>
+    <meta
+      name="description"
+      content="Aluminum doors and windows, iron grills and structures, custom fabrication with color options."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f9f9f9;
+        --text: #333333;
+        --muted: #6b7280;
+        --silver: #c0c0c0;
+        --bronze: #cd7f32;
+        --brown: #5c4033;
+        --black: #000000;
+        --white: #ffffff;
+        --shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+        --radius: 20px;
+        --maxw: 1250px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial,
+          sans-serif;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: saturate(180%) blur(10px);
+        border-bottom: 1px solid #eee;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: Montserrat, sans-serif;
+      }
+      .logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--silver), #9ca3af);
+        display: grid;
+        place-items: center;
+        box-shadow: var(--shadow);
+      }
+      .brand h1 {
+        font-size: 18px;
+        letter-spacing: 0.3px;
+        margin: 0;
+      }
+      nav a {
+        margin-left: 18px;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+      }
+      nav a:hover,
+      nav a:focus {
+        color: var(--bronze);
+      }
+      .cta {
+        margin-left: 22px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: var(--bronze);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: var(--shadow);
+      }
+      .menu-btn {
+        display: none;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #fff;
+        padding: 8px;
+      }
+      .hero {
+        position: relative;
+        isolation: isolate;
+      }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 36px;
+        align-items: center;
+        padding: 80px 0;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid #eee;
+        color: #555;
+        font-size: 12px;
+      }
+      .title {
+        font-family: Montserrat, sans-serif;
+        font-size: 48px;
+        line-height: 1.15;
+        margin: 16px 0 10px;
+      }
+      .subtitle {
+        color: #4b5563;
+        margin: 0 0 22px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 18px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #fff;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 600;
+      }
+      .btn.primary {
+        background: var(--black);
+        color: #fff;
+        border-color: var(--black);
+      }
+      .hero-art {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .hero-art img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .chips {
+        position: absolute;
+        inset: auto 16px 16px auto;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .chip {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #eee;
+        font-size: 12px;
+      }
+      section {
+        padding: 90px 0;
+      }
+      .sec-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+      .sec-head h2 {
+        font-family: Montserrat, sans-serif;
+        font-size: 32px;
+        margin: 0;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        display: block;
+      }
+      .card .meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 14px;
+      }
+      .meta .tag {
+        font-weight: 600;
+      }
+      .swatches {
+        display: flex;
+        gap: 6px;
+      }
+      .swatch {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        border: 1px solid #e5e7eb;
+      }
+      .s-silver {
+        background: var(--silver);
+      }
+      .s-black {
+        background: #0b0b0b;
+      }
+      .s-white {
+        background: #fff;
+      }
+      .s-bronze {
+        background: var(--bronze);
+      }
+      .s-brown {
+        background: var(--brown);
+      }
+      .clickable {
+        cursor: pointer;
+      }
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .about .panel {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 10px;
+      }
+      .kpi {
+        background: #fafafa;
+        border: 1px solid #eee;
+        border-radius: 14px;
+        padding: 16px;
+        text-align: center;
+      }
+      .kpi strong {
+        display: block;
+        font-size: 22px;
+        font-family: Montserrat;
+      }
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .step {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
+      .step h3 {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+      .contact {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+      }
+      form {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+      label {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #fff;
+        font: inherit;
+      }
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+      .submit {
+        background: var(--bronze);
+        color: #fff;
+        border: 0;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .contact-details {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+      .contact-details a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .map {
+        margin-top: 14px;
+        border: 0;
+        width: 100%;
+        height: 280px;
+        border-radius: 14px;
+      }
+      footer {
+        padding: 28px 0;
+        border-top: 1px solid #eee;
+        color: #6b7280;
+      }
+      @media (max-width: 980px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+        .contact {
+          grid-template-columns: 1fr;
+        }
+        .about {
+          grid-template-columns: 1fr;
+        }
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .process {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        nav {
+          display: none;
+        }
+        .menu-btn {
+          display: block;
+        }
+      }
+      @media (max-width: 620px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .process {
+          grid-template-columns: 1fr;
+        }
+        .title {
+          font-size: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <h1>Bhusal Grill Udhyog</h1>
+        </div>
+        <nav aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#works">Our Works</a>
+          <a href="#about">About</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+          <a class="cta" href="#contact">Get Quote</a>
+        </nav>
+        <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">
+          ☰
+        </button>
       </div>
-      <div class="card">
-        <img src="https://5.imimg.com/data5/NE/QC/QO/SELLER-99568001/ss-railing-1000x1000.jpg" alt="Balcony & Stair Railings">
-        <h3>Balcony Railings</h3>
-        <p>Elegant aluminium railings that combine safety with design.</p>
-      </div>
-      <div class="card">
-        <img src="https://stylesatlife.com/wp-content/uploads/2019/10/Best-Aluminium-Door-Designs.jpg" alt="Aluminium Doors">
-        <h3>Aluminium Doors</h3>
-        <p>Modern aluminium doors suitable for homes, offices, and hotels.</p>
-      </div>
-      <div class="card">
-        <img src="https://libsteel.com/wp-content/uploads/2024/02/Capabilities-Fabricating-Weldment-DSC05322-slide.jpg" alt="Custom Fabrication">
-        <h3>Custom Fabrication</h3>
-        <p>Made-to-order aluminium products designed for your needs.</p>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <section id="about" class="section" style="background:#fafafa;">
-    <h2>About Us</h2>
-    <div style="max-width:800px;margin:0 auto;">
-      <p><strong>Bhusal Grill Udhyog</strong> specializes in aluminium fabrication. Our grills, doors, and windows are trusted for durability, modern design, and affordability. From residential homes to commercial buildings, we deliver products that balance safety with aesthetics.</p>
-    </div>
-  </section>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="badge"
+            >Custom Fabrication • Doors • Windows • Grills</span
+          >
+          <h2 class="title">Strong. Stylish. Durable.</h2>
+          <p class="subtitle">
+            Aluminum doors and windows. Iron grills and structures. Precision
+            finishing with color options: silver, black, white, bronze, and
+            brown.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#works">View Our Works</a>
+            <a class="btn" href="#contact">Request a Quote</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="handrails-grill1.jpg" alt="Metal fabrication close-up" />
+        </div>
+      </div>
+    </section>
 
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> Gaindakot-07, Gairi Road, Nawalparasi, Nepal</p>
-      <p><strong>Phone:</strong> +977 9865076242</p>
-      <p><strong>Email:</strong> Bhusalgrilludhyog@gmail.com</p>
-    </div>
-  </section>
+    <!-- Our Works -->
+    <section id="works">
+      <div class="container">
+        <div class="sec-head">
+          <h2>Our Works</h2>
+          <p class="muted">
+            Selected aluminum doors, windows, and grill structures.
+          </p>
+        </div>
+        <div class="grid">
+          <figure class="card">
+            <img src="door.jpg" alt="Project 1" />
+            <figcaption class="meta">
+              <span class="tag">Aluminum Door</span>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <img src="Window-Grill-Works-in-Chennai-1.jpg" alt="Project 2" />
+            <figcaption class="meta">
+              <span class="tag">Window Frame</span>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <img src="blue star industries_shop154.jpg" alt="Project 3" />
+            <figcaption class="meta">
+              <span class="tag">Iron Gate</span>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <img src="structure.jpg" alt="Project 4" />
+            <figcaption class="meta">
+              <span class="tag">Custom Structure</span>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <img src="balcony-grill-design-in-overhang-style.jpg" alt="Project 5" />
+            <figcaption class="meta">
+              <span class="tag">Balcony Grill</span>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <img src="https://picsum.photos/400/240?6" alt="Project 6" />
+            <figcaption class="meta">
+              <span class="tag">Workshop</span>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <img src="sliding.jpg" alt="Project 7" />
+            <figcaption class="meta">
+              <span class="tag">Sliding Window</span>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <img src="https://picsum.photos/400/240?8" alt="Project 8" />
+            <figcaption class="meta">
+              <span class="tag">Main Gate</span>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <img src="partation.jpg" alt="Project 9" />
+            <figcaption class="meta">
+              <span class="tag">Interior Partition</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Bhusal Grill Udhyog. All rights reserved.</p>
-  </footer>
-</body>
+    <!-- About -->
+    <section id="about">
+      <div class="container about">
+        <div class="panel">
+          <h2>About</h2>
+          <p>
+            We craft aluminum doors and windows, iron grills, and custom metal
+            structures with precision. Every project is measured, fabricated,
+            and installed to fit.
+          </p>
+          <div class="kpis">
+            <div class="kpi">
+              <strong>15+ yrs</strong><span>Experience</span>
+            </div>
+            <div class="kpi"><strong>500+</strong><span>Projects</span></div>
+            <div class="kpi"><strong>5</strong><span>Color Options</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Specialties</h3>
+          <ul>
+            <li>Aluminum sliding and casement systems</li>
+            <li>Iron grills for doors, windows, balconies</li>
+            <li>Custom fabrication and on-site installation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process">
+      <div class="container">
+        <div class="sec-head">
+          <h2>Our Process</h2>
+          <p class="muted">How we work when you contact us.</p>
+        </div>
+        <div class="process">
+          <div class="step">
+            <img src="https://picsum.photos/100?10" alt="Step 1 icon" />
+            <h3>1. Contact</h3>
+            <p>Reach out to us via phone, email, or form.</p>
+          </div>
+          <div class="step">
+            <img src="https://picsum.photos/100?11" alt="Step 2 icon" />
+            <h3>2. Site Visit</h3>
+            <p>We physically visit your site and take accurate measurements.</p>
+          </div>
+          <div class="step">
+            <img src="https://picsum.photos/100?12" alt="Step 3 icon" />
+            <h3>3. Samples</h3>
+            <p>We show you material and color samples to choose from.</p>
+          </div>
+          <div class="step">
+            <img src="https://picsum.photos/100?13" alt="Step 4 icon" />
+            <h3>4. Fabrication & Delivery</h3>
+            <p>
+              Work is completed with precision and delivered/installed at your
+              site.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="sec-head">
+          <h2>Contact</h2>
+        </div>
+        <div class="contact">
+          <form>
+            <label>Name</label>
+            <input type="text" required />
+            <label>Email</label>
+            <input type="email" required />
+            <label>Message</label>
+            <textarea></textarea>
+            <button class="submit">Send</button>
+          </form>
+          <div class="contact-details">
+            <h3>Call or Visit</h3>
+            <p><strong>Phone:</strong> +977 9865076242</p>
+            <p><strong>Email:</strong> bhushalgrilludhyog@gmail.com</p>
+            <p><strong>Location:</strong> Gaidakot -07 , Gairi Road, Nawalparasi, Nepal</p>
+            <iframe
+              class="map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0628!2d84.427!3d27.683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fbd1a6f3b3af%3A0x0!2sBharatpur%2C%20Nepal!5e0!3m2!1sen!2snp!4v1700000000000"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>© <span id="year"></span> Grill & Aluminum Works</p>
+      </div>
+    </footer>
+  </body>
 </html>
